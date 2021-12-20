@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Dosha</th>
+                <th>Health</th>
+                <th>Report</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %} 
+                <tr>
+                    <td>{{row[0]}}</td>
+                    <td>{{row[1]}}</td>
+                    <td>{{row[2]}}</td>
+                    <td>{{row[5]}}</td>
+                    <td>{{row[7]}}</td>
+                    {% set x=row[5]%}
+                    {% set y=row[7]%}
+                    {% set z=row[1]%}
+                    <td><a href="{{url_for('users.prediction2',res1=x,h1=y,user1=z)}}"> View report </a></td>
+
+                </tr>
+                {% endfor %} 
+        </tbody>
+    </table>
+
+
+{% endblock content %}

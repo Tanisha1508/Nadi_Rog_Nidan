@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block content %}
+    <!--<h1>{{ current_user.username }}</h1> ---older -->
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ image_file }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ current_user.username }}</h2>
+          <p class="text-secondary">{{ current_user.email }}</p>
+        </div>
+      </div>
+      <!--FORM HERE--to be able to update or edit username,email address,profile pic-->
+        <form method="POST" action="" enctype="multipart/form-data"> <!--special encoding type for our form to pass our image data properly-->
+        <!--when we post this form its going to go back to the same route i.e. post
+        that info to the same route that we are currently on-->
+            <!-- form.hidden_tag()--it adds a CSRF i.e. a cross-site request forgery token-->
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Account Details</legend>
+                <!--create form groups using div to use form fields-->
+                <div class=" form-group">
+                     {{ form.username.label(class="form-control-label") }}
+                     <!--print errors if user inputs invalid data/info-->
+                     {% if form.username.errors %}
+                        {{ form.username(class="form-control form-contol-lg, is-invalid") }}  
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div> 
+                     {% else %}
+                        {{ form.username(class="form-control form-contol-lg") }}<!--lg for large here-->
+                     {% endif %}  
+                </div>
+                <div class=" form-group">
+                    {{ form.email.label(class="form-control-label") }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-contol-lg, is-invalid") }}  
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div> 
+                     {% else %}
+                        {{ form.email(class="form-control form-contol-lg") }}<!--lg for large here-->
+                     {% endif %} 
+                </div>
+                <div class=" form-group">
+                  {{ form.picture.label() }}
+                  {{ form.picture(class="form-control-file") }}
+                  {% if form.picture.errors %}
+                    {% for error in form.picture.errors %}
+                      <span class="text-danger">{{ error }}</span></br>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+            </fieldset>
+            <div class=" form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+           </div>
+        </form>
+    </div>
+{% endblock content %}

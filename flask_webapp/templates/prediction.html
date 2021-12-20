@@ -1,0 +1,283 @@
+{% extends "layout.html" %}
+{% block content %}
+   <p><b>Hi,{{user}}</b>
+   </p>
+   <p>According to the form data received from your side your dominant dosha is:
+   {% for x in res %}
+   <b>{{x}}</b>
+   {% endfor %}
+   </p>
+    
+    <p>Your current health status according to your pulse data is:
+      {% for y in h %}
+      <b>{{y}}</b>
+      {% endfor %}
+   </p>
+   
+   {% if ('vata' in res) and ('healthy' in h) %}
+   <p><i>
+      Those with a Vata constitution had air and ether predominantly present during their birth. Vata is responsible for the
+      body&#39;s energy, movement and nerve impulses, which manifests as breath, circulation, elimination, and flow of thoughts.</i>
+      <br>
+      <br>
+      <b>Here are some recommendations for you:</b><br><br>
+      <b>Diet that best suits your dosha:</b> Since Vata types need to balance their cold, light, airy and dry qualities, you need to eat foods that
+      are warm, heavy, dense, and moist. You would also require sweet, sour, and salty foods. It&#39;s important for Vata&#39;s to avoid
+      alcohol, caffeine, chocolate and stress. You should maintain regular bedtimes and mealtimes and indulge in moderate
+      exercise and meditation daily. You should try to stay in warm, humid, quiet, safe, and comfortable environments.
+      <br>
+      <br>
+      <b>Exercises you can follow to stay healthy:</b> You seem to be naturally energetic and love to exercise and enjoy fast-paced
+      workouts like dancing, cardio, running. However, people belonging to this category have a smaller body frame, weak
+      digestive system and have a lower weight. So you may need to slow down and balance your energy. Vata people have a hard
+      timing gaining weight and need to pay more attention to building bones and muscles. So, you should focus on your form rather than the speed.
+   </p>
+
+   {% elif ('pitta' in res) and ('healthy' in h) %}
+   <p><i>
+      Pitta is governed by fire and water and is responsible for transformation and regulation of metabolism, body
+      temperature, digestion and intelligence. Pitta is essential for the digestive and endocrine system of the body.</i>
+      <br>
+      <br>
+      <b>Here are some recommendations for you:</b><br><br>
+      <b>Diet that best suits your dosha:</b> Since Pittas need to bring balance to their hot, fluid, and sharp qualities, they need to eat cool, dry,
+      and mild foods. They also require sweet, bitter, and astringent foods. It&#39;s important that Pitta types practice
+      moderation, take time for play and laughter, spend time in nature (especially around bodies of water) and enjoy exercise
+      (but avoid extreme workouts or competition). Pitta types should also avoid sources of heat (e.g. mid-day sun) and stay
+      in cool, well-ventilated environments.
+      <br>
+      <br>
+      <b>Exercises you can follow to stay healthy:</b> Pitta is linked with fire and people falling in this category have warm body temperatures, strong
+      stamina and average stature. They are generally athletic by nature and prefer exercises that push their bodies&#39; limits.
+      Boot-camps, boxing, Crossfit and weight lifting exercises are their favorite. But to counterbalance their energy, people
+      belonging to this category should do non-competitive and relaxing workouts. Apart from this, Pittas are generally hot by
+      nature. So, they should not perform exercises at a hot and humid place. This will throw your Pitta energy way out of
+      whack.
+   </p>
+   {% elif ('kapha' in res) and ('healthy' in h) %}
+   <p><i>
+      Kapha&#39;s prominent energies are water and earth. Kapha is essential for structure and fluidity, and manifests as weight,
+      growth, strength, tissue lubrication, and formation.</i>
+      <br>
+      <br>
+      <b>Here are some recommendations for you:</b><br><br>
+      <b>Diet that best suits your dosha:</b> Since you are Kapha Dosha, you need to balance your moist, soft and heavy qualities, you also need to eat
+      light, dry and fiery foods. You may be benefitted from eating astringent, bitter and pungent foods. In addition, it&#39;s
+      important for you to wake up before 6 a.m., take your main meal at noon and exercise regularly and vigorously.
+      You should also adhere to your routine, but you need variety and new experiences. You are usually benefitted from dry, warm
+      environments.
+      <br>
+      <br>
+      <b>Exercises you can follow to stay healthy:</b> Kapha is composed of water and earth elements. Kapha people have bigger frames, have great physical
+      strength, may be lazy and may gain weight easily. It is quite difficult to motivate people belonging to this section.
+      So, you should try fast-paced exercises to stay healthy and fit. You may have the highest endurance of all the doshas and can perform any exercise for a longer period of time.
+   </p>
+   {% elif ('vata' in res) and ('unhealthy' in h) %}
+   <p><i>
+      Those with a Vata constitution had air and ether predominantly present during their birth. Vata is responsible for the
+      body&#39;s energy, movement and nerve impulses, which manifests as breath, circulation, elimination, and flow of thoughts.
+      <br></i>
+      <br>
+      <b>Here are some recommendations for you:</b><br><br>
+      In order to fix your imbalanced dosha, the first step you need to take is to, understand the common causes of
+      imbalance:
+      <li>Staying awake at night or insufficient sleep</li>
+      <li>Fear, grief, worry, stress</li>
+      <li>Travel</li>
+      <li>Excessive exercise, sex or mental activity</li>
+      <li>Suppression of natural urges</li>
+      <li>Irregular daily routine</li>
+      <li>Injuries, surgery, childbirth, old age, late fall & winter
+      <li>Excess pungent, bitter and astringent taste; light dry, rough, raw diet; insufficient food; caffeine</li>
+      
+      <br>
+      Once you understand the source behind your imbalanced dosha, you can work on it and help cure it.
+      <br>
+      <br>
+      <b>How to balance Vata?</b>
+      <li>Get to bed before 10 PM</li>
+      <li>Maintain a regular daily routine</li>
+      <li>Follow a Vata-pacifying diet
+         <ul>
+         <li>Favor warm beverages</li>
+         <li>Food should be warm and freshly prepared</li>
+         <li>Use liberal amounts of sesame oil. Ghee, butter, olive oil and coconut oil are also good.</li>
+         <li>Avoid alcohol, caffeinated beverages, and chocolate</li>
+         <li>Avoid raw or gas-forming vegetables (broccoli, cauliflower, cabbage, kale, etc.)</li>
+         <li>Have some boiled milk with cardamom before bed with 2-4 tablets of Digestone</li>
+         </ul>
+      </li>
+      <li>Practice Transcendental Meditation</li>
+     <br>
+     <br>
+     <b>Other Beneficial Practices</b> 
+     <li>Pranayama breathing practice</li>
+     <li>Exercise in moderation and not to the point of exhaustion: walking in nature and yoga are good choices</li>
+     <li>Abhyanga self-massage with cured sesame oil</li>
+     <br>
+
+   </p>
+   {% elif ('pitta' in res) and ('unhealthy' in h) %}
+      <p><i>
+         Pitta is governed by fire and water and is responsible for transformation and regulation of metabolism, body
+         temperature, digestion and intelligence. Pitta is essential for the digestive and endocrine system of the body.
+         <br></i>
+         <br>
+         <b>Here are some recommendations for you:</b><br><br>
+         In order to fix your imbalanced dosha, the first step you need to take is to, understand the common causes of
+         imbalance: 
+
+         <li>Over-exertion</li>
+         <li>Excessive talking</li>
+         <li>Hot, spicy, salty and sour food</li>
+         <li>Anger, hatred, jealousy, passion</li>
+         <li>Fasting</li>
+         <li>Alcohol, tobacco, caffeine</li>
+         <li>Summertime, exposure to heat or mid-day sun, middle age</li>
+         <li>Over-work, over-use of eyes especially with computer screens</li>
+         <br>
+      
+         Once you understand the source behind your imbalanced dosha, you can work on it and help cure it.
+         <br>
+         <br>
+         <b>How to balance Pitta?</b>
+
+         <li>Cultivate moderation in all things and don't take yourself too seriously</li>
+         <li>Get to bed before 10 PM</li>
+         <li>Be careful not to over-work or strain the eyes with computer or TV especially in the evening</li>
+         <li>Enjoy exercise, but avoid getting overheated or too embroiled in competitive sports. Swimming, skiing, walking in nature
+         by bodies of water, cycling, yoga, etc. are good choices</li>
+         <li>Protect yourself from the midday sun</li>
+         <li>Follow a Pitta-pacifying diet
+            <ul>
+               <li>Take time to eat a hearty lunch</li>
+               <li>Favor cool, but not ice-cold beverages</li>
+               <li>Food should be freshly prepared and moderately unctuous</li>
+               <li>Favor ghee in the cooking along with cooling spices like fennel, coriander, cardamom and turmeric. Coconut oil and
+                  olive oil are also good.</li>
+               <li>Avoid chili peppers, vinegar, salt, alcohol, tobacco, caffeinated beverages and chocolate</li>
+               <li>Before bed, have some milk previously boiled with a little ghee, saffron, cardamom and sugar, once cooled to a
+                  comfortable temperature</li>
+            </ul>     
+         </li>
+         <li>First thing in the morning after brushing the teeth and rinsing the mouth, drink some pure water left overnight in a cup
+         of pure copper</li>
+         <li>Practice Transcendental Meditation</li>
+         <br>
+         <b>Other Beneficial Practices</b>
+         <li>Pranayama breathing practice</li>
+         <li>Abhyanga self-massage with coconut oil on the head and cured sesame oil on the body.</li>
+         <br>
+   
+      </p>
+      {% elif ('kapha' in res) and ('unhealthy' in h) %}
+      <p><i>
+         Kapha&#39;s prominent energies are water and earth. Kapha is essential for structure and fluidity, and manifests as weight,
+         growth, strength, tissue lubrication, and formation.</i>
+         <br>
+         <br>
+         <b>Here are some recommendations for you:</b><br><br>
+         In order to fix your imbalanced dosha, the first step you need to take is to, understand the common causes of
+         imbalance: 
+
+         <li>Excessive sleep (during the day or night)</li>
+         <li>Lack of exercise</li>
+         <li>Lack of mental activity</li>
+         <li>Over-eating</li>
+         <li>Heavy, oily, cold, sweet, sour and salty food</li>
+         <li>Childhood, springtime, cool and damp climates</li>
+         <br>
+         Once you understand the source behind your imbalanced dosha, you can work on it and help cure it.
+         <br>
+         <br>
+         <b>How to balance Kapha?</b>
+         <br>
+         Kapha represents structure. By nature, Kapha is stable, slow and resistant to change. That is both a blessing and a
+         curse. When out of balance, Kapha may cause problems in mind and body related to accumulation and stagnation, such as
+         obesity, slow digestion, respiratory congestion, lethargy and depression. You need mental stimulation and physical
+         activity to stay in balance.
+         <br>
+
+         <li>Get up and get active: take a brisk walk soon after sunrise, preferably in a beautiful, natural setting</li>
+         <li>If you have a sedentary job, walk briskly at least 10 minutes every few hours or get a standup desk, perhaps with a
+         treadmill</li>
+         <li>Awaken by 6 AM without an alarm</li>
+         <li>Exercise regularly and vigorously</li>
+         <li>Seek out challenge for your intellect</li>
+         <li>Minimize heavy foods</li>
+         <li>Take 1 tsp. raw honey in a half cup of warm water to start your day</li>
+         <li>Favor warm beverages</li>
+         <li>Food should be warm, freshly prepared and not too unctuous</li>
+         <li>Enjoy spices, especially fresh ginger</li>
+         <li>Avoid alcohol, caffeinated beverages, chocolate and other sweets</li>
+         <li>Have a light dinner, preferably before 7 PM</li>
+         <li>Start a habit of taking a liquid fast one day a week</li>
+         <li>Practice Transcendental Meditation</li>
+         <br>
+         <b>Other Beneficial Practices</b>
+         <li>Pranayama breathing practice</li>
+         <li>Abhyanga self-massage without oil using raw silk or wool gloves</li>
+            <br>
+         Now, here are some dietary and exercise plans that go best with vata dosha:
+         <br>
+         <br>
+      {% elif ('vata' in res) and ('Blood Pressure Likely' in h) %}
+      </p><i>
+      Those with a Vata constitution had air and ether predominantly present during their birth. Vata is responsible for the
+      body&#39;s energy, movement and nerve impulses, which manifests as breath, circulation, elimination, and flow of
+      thoughts.
+      <br></i>
+
+      <b>Hypertension</b> is the condition in which an individual has elevated blood pressure. Hypertension is caused by Vata vitiation. In some cases, there is an
+      obstruction in body channels which in turn causes a Vata imbalance.
+
+      <br><br>
+
+      <b>Here are some recommendations for you:</b><br><br>
+      
+      <b>Management of hypertension-</b><br>
+      Follow an integrated approach of yoga, meditation & diet. Yoga Asanas have a positive influence on controlling the movement of prana Vata or circulation in your body.
+      Pranayama is found very effective in controlling elevated blood pressures. If this is practiced regularly you can see
+      amazing results.
+      <br>
+      Meditation can control your anger, stress & depression. This reduces the adrenal influx into the blood. So blood flow is
+      not altered in any manner. The normal circulation is maintained so as the blood pressure. Daily practice can improve the
+      general well-being of the body. Most importantly, dietary & lifestyle changes are recommended in Ayurveda.
+      <br><br>
+      
+      <b>Methods to Prevent Hypertension</b>
+      <li>Never skip your routine checkup of blood pressure & take a blood test when needed</li>
+      <li>Go for fiber-rich options to enhance digestion & prevent constipation</li>
+      <li>Sound sleep calms your body & improves the overall metabolic functions</li>
+      <li>Avoid processed foods like sausages, smoked meats, sauces, etc. You can rely on homemade sausages or burgers. Processed
+      foods contain high sodium which increases the blood pressure</li>
+      <li>Plenty of fluids are necessary to maintain the blood concentration. Drink an adequate amount of boiled water or
+      medicated herbal drinks</li>
+      <li>Minimize your habit of eating out. When you want your favorite chunky burgers or pizzas, give it a try at your home with
+      healthy ingredients.</li>
+
+      <br>
+      <b>How to balance Vata?</b>
+      <li>Get to bed before 10 PM</li>
+      <li>Maintain a regular daily routine</li>
+      <li>Follow a Vata-pacifying diet
+         <ul>
+         <li>Favor warm beverages</li>
+         <li>Food should be warm and freshly prepared</li>
+         <li>Use liberal amounts of sesame oil. Ghee, butter, olive oil and coconut oil are also good.</li>
+         <li>Avoid alcohol, caffeinated beverages, and chocolate</li>
+         <li>Avoid raw or gas-forming vegetables (broccoli, cauliflower, cabbage, kale, etc.)</li>
+         <li>Have some boiled milk with cardamom before bed with 2-4 tablets of Digestone</li>
+         </ul>
+      </li>
+      <li>Practice Transcendental Meditation</li>
+     <br>
+     <b>Other Beneficial Practices</b> 
+     <li>Pranayama breathing practice</li>
+     <li>Exercise in moderation and not to the point of exhaustion: walking in nature and yoga are good choices</li>
+     <li>Abhyanga self-massage with cured sesame oil</li>
+     <br>
+   {% endif %}
+   
+    
+{% endblock content %}

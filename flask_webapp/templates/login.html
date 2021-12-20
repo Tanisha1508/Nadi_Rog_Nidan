@@ -1,0 +1,61 @@
+<!-- child template  we have to put our form in the content section -->
+{% extends "layout.html" %}
+{% block content %}
+    <div class="content-section">
+        <form method="POST" action="">
+        <!--when we post this form its going to go back to the same route i.e. post
+        that info to the same route that we are currently on-->
+            <!-- form.hidden_tag()--it adds a CSRF i.e. a cross-site request forgery token-->
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Login to your Account</legend>
+                <!--create form groups using div to use form fields-->
+                <div class=" form-group">
+                    {{ form.email.label(class="form-control-label") }}
+                    {% if form.email.errors %}
+                        {{ form.email(class="form-control form-contol-lg, is-invalid") }}  
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div> 
+                     {% else %}
+                        {{ form.email(class="form-control form-contol-lg") }}<!--lg for large here-->
+                     {% endif %} 
+                </div>
+                <div class=" form-group">
+                    {{ form.password.label(class="form-control-label") }}
+                    {% if form.password.errors %}
+                        {{ form.password(class="form-control form-contol-lg, is-invalid") }}  
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div> 
+                     {% else %}
+                        {{ form.password(class="form-control form-contol-lg") }}
+                     {% endif %} 
+                </div>
+                <!--add a remember me checkbox-->
+                <div class="form-check">
+                    <p>
+                    {{ form.remember(class="form-check-input") }}
+                    {{ form.remember.label(class="form-check-label") }}
+                    </p>
+                </div>
+            </fieldset>
+            <div class=" form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+                <!--add a forgot password field-->
+                <small class="text-muted ml-2">
+                    <a class="text-dark" href="{{url_for('users.reset_request')}}">Forgot your Password?</a>
+                </small>
+           </div>
+        </form>
+    </div>
+    <div class="border-top pt-0">
+        <small class="text-muted"><!--text-muted fades out the text a bit-->
+            Need an account?<a class=" text-dark ml-1" href="{{url_for('users.register')}}">Register Here</a>
+        </small>
+    </div>
+{% endblock content %}

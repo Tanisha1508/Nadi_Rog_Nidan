@@ -1,0 +1,92 @@
+<!-- child template  we have to put our form in the content section -->
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <form method="POST" action="">
+        <!--when we post this form its going to go back to the same route i.e. post
+        that info to the same route that we are currently on-->
+        <!-- form.hidden_tag()--it adds a CSRF i.e. a cross-site request forgery token-->
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">INSTRUCTIONS</legend>
+            <i style="font-size: 16px; color: #4e4e50;">
+                Take a deep breath and be patient. We hate to take you through these many questions but we would like to ascertain that
+                we have every detail of your body's dosha assessed, so that better lifestyle suggestion for wellness, disease
+                prevention, long life and recovery from any ailment, can be presented to you, tailored!
+            </i>
+            <!--create form groups using div to use form fields-->
+            <br><br>
+            <div class="form-group">
+                {{ form.size.label }} {{ form.size }}
+                <!--print errors if user inputs invalid data/info-->
+            </div>
+            <div class="form-group">
+                {{ form.weight.label }} {{ form.weight }}
+                <!--print errors if user inputs invalid data/info-->
+            </div>
+            <div class=" form-group">
+                {{ form.chin.label }} {{ form.chin }}
+            </div>
+            <div class=" form-group">
+                {{ form.cheeks.label }} {{ form.cheeks }}
+            </div>
+            <div class=" form-group">
+                {{ form.eyeshape.label }} {{ form.eyeshape }}
+            </div>
+            <div class=" form-group">
+                {{ form.eyecolor.label }} {{ form.eyecolor }}
+            </div>
+            <div class=" form-group">
+                {{ form.nose.label }} {{ form.nose }}
+            </div>
+            <div class=" form-group">
+                {{ form.teeth_gums.label }} {{ form.teeth_gums }}
+            </div>
+            <div class=" form-group">
+                {{ form.skin.label }} {{ form.skin }}
+            </div>
+            <div class=" form-group">
+                {{ form.skin_color.label }} {{ form.skin_color }}
+            </div>
+            <div class=" form-group">
+                {{ form.hair.label }} {{ form.hair }}
+            </div>
+            <div class=" form-group">
+                {{ form.hair_color.label }} {{ form.hair_color }}
+            </div>
+            <div class=" form-group">
+                {{ form.appetite.label }} {{ form.appetite }}
+            </div>
+            <div class=" form-group">
+                {{ form.digestion.label }} {{ form.digestion }}
+            </div>
+            <div class=" form-group">
+                {{ form.thirst.label }} {{ form.thirst }}
+            </div>
+            <div class=" form-group">
+                {{ form.emotions.label }} {{ form.emotions }}
+            </div>
+            <div class=" form-group">
+                {{ form.mind.label }} {{ form.mind }}
+            </div>
+            <div class=" form-group">
+                {{ form.intellect.label }} {{ form.intellect }}
+            </div>
+            <div class=" form-group">
+                {{ form.speech.label }} {{ form.speech }}
+            </div>
+            <div class=" form-group">
+                {{ form.voice.label }} {{ form.voice }}
+            </div>
+            <div class=" form-group">
+                {{ form.lips.label }} {{ form.lips }}
+            </div>
+            
+
+        </fieldset>
+        <div class=" form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+</div>
+{% endblock content %}
